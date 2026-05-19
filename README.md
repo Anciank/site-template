@@ -123,6 +123,18 @@ VITE_API_BASE_URL=
 
 `VITE_API_BASE_URL` is intentionally empty for phase 1. When a backend is added later, point it at the API URL.
 
+## Lambda-ready archive
+
+The repository root includes [lambda.mjs](/Users/anciank/projects/site-template/lambda.mjs:1), a Node.js Lambda handler that serves the committed Vite build from `dist/`.
+
+That means the `repo.zip` produced by the `s3+zip://` remote can be used as a Lambda zip artifact as long as:
+
+- the runtime is `nodejs20.x` or newer
+- the handler is `lambda.handler`
+- `dist/` is present in the archive
+
+The handler serves built assets directly and falls back to `dist/index.html` for SPA routes.
+
 ## Project structure
 
 ```txt

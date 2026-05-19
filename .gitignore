@@ -1,9 +1,11 @@
 node_modules
 .DS_Store
-dist
 .env
 .env.local
 .sst
+!.sst/
+!.sst/platform/
+!.sst/platform/config.d.ts
 .vscode
 .idea
 *.log
