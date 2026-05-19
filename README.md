@@ -130,7 +130,7 @@ The repository root includes [lambda.mjs](/Users/anciank/projects/site-template/
 That means the `repo.zip` produced by the `s3+zip://` remote can be used as a Lambda zip artifact as long as:
 
 - the runtime is `nodejs20.x` or newer
-- the handler is `lambda.handler`
+- the handler is `index.handler` or `lambda.handler`
 - `dist/` is present in the archive
 
 The handler serves built assets directly and falls back to `dist/index.html` for SPA routes.
